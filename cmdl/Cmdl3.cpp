@@ -17,6 +17,8 @@ void WriteFile(string filename,int arr[],int size_arr)
     ofstream ofs;
     ofs.open(filename);
 
+    ofs << size_arr << endl;
+
     if(!ofs.is_open())
     {
         cout << "Can't open file.";
@@ -125,6 +127,16 @@ void CommandLine3(string algorithm,int input_size,string output_parameter)
     cout << endl;
     cout << "Input size: "<< is << "\n\n";
 
+    char i1[] = "input_1.txt";
+    char i2[] = "input_2.txt";
+    char i3[] = "input_3.txt";
+    char i4[] = "input_4.txt";
+
+    WriteFile(i1,arr_rand,is);
+    WriteFile(i2,arr_nsort,is);
+    WriteFile(i3,arr_sort,is);
+    WriteFile(i4,arr_rev,is);
+
     cout << "Input order: Randomize" << endl;
     cout << "----------------------" << endl;
     checksorted = Sort(algorithm,arr_rand,is,rtime,ccmp);
@@ -149,10 +161,10 @@ void CommandLine3(string algorithm,int input_size,string output_parameter)
     if(checksorted)
         OutputParameter(output_parameter,rtime,ccmp);
 
-    char o1[] = "input_1.txt";
-    char o2[] = "input_2.txt";
-    char o3[] = "input_3.txt";
-    char o4[] = "input_4.txt";
+    char o1[] = "output_1.txt";
+    char o2[] = "output_2.txt";
+    char o3[] = "output_3.txt";
+    char o4[] = "output_4.txt";
 
     WriteFile(o1,arr_rand,is);
     WriteFile(o2,arr_nsort,is);
